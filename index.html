@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rob Dobson — Senior Digital Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1814;
+    --ink-mid: #4a4640;
+    --ink-light: #8a8480;
+    --paper: #f5f2ed;
+    --paper-dark: #ede9e2;
+    --accent: #c4420a;
+    --accent-light: #f0e8e0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 17px;
+  }
+
+  /* HEADER */
+  header {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 3rem clamp(1.5rem, 6vw, 6rem);
+    border-bottom: 1px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    border: 1px solid rgba(26,24,20,0.08);
+    pointer-events: none;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    border: 1px solid rgba(26,24,20,0.05);
+    pointer-events: none;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+  }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: inherit; text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 0;
+  }
+
+  .hero-label {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-label::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    max-width: 14ch;
+    margin-bottom: 2.5rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--ink-mid);
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: var(--ink-mid);
+    max-width: 52ch;
+    line-height: 1.6;
+  }
+
+  .hero-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(26,24,20,0.12);
+  }
+
+  .since {
+    font-size: 13px;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+  }
+
+  .cta-group { display: flex; gap: 1rem; align-items: center; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn:hover { background: var(--ink); color: var(--paper); }
+
+  .btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .btn-primary:hover { background: #a33508; border-color: #a33508; color: #fff; }
+
+  /* NUMBERS STRIP */
+  .numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .number-item {
+    padding: 3rem clamp(1.5rem, 6vw, 6rem);
+    border-right: 1px solid var(--ink);
+  }
+
+  .number-item:last-child { border-right: none; }
+
+  .number-big {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .number-big span { color: var(--accent); }
+
+  .number-label {
+    font-size: 13px;
+    color: var(--ink-mid);
+    letter-spacing: 0.05em;
+  }
+
+  /* WHAT I DO */
+  .what {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .what-label {
+    padding: 4rem clamp(1.5rem, 6vw, 6rem);
+    border-right: 1px solid var(--ink);
+  }
+
+  .section-tag {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .what-content {
+    padding: 4rem clamp(1.5rem, 4vw, 4rem);
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    max-width: 20ch;
+  }
+
+  .competencies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .comp {
+    padding: 1.75rem;
+    background: var(--paper-dark);
+    border-left: 2px solid var(--accent);
+  }
+
+  .comp-title {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+
+  .comp-desc {
+    font-size: 14px;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+
+  /* RESULTS */
+  .results {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0;
+    border-bottom: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .results-label {
+    padding: 4rem clamp(1.5rem, 6vw, 6rem);
+    border-right: 1px solid rgba(245,242,237,0.15);
+  }
+
+  .results-label .section-tag { color: rgba(245,242,237,0.4); }
+
+  .results-content {
+    padding: 4rem clamp(1.5rem, 4vw, 4rem);
+  }
+
+  .results-content h2 { color: var(--paper); }
+
+  .result-list {
+    list-style: none;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .result-list li {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(245,242,237,0.1);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: baseline;
+    font-size: 15px;
+    color: rgba(245,242,237,0.8);
+    line-height: 1.6;
+  }
+
+  .result-list li:last-child { border-bottom: none; }
+
+  .result-marker {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  /* CAREER */
+  .career {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .career-label {
+    padding: 4rem clamp(1.5rem, 6vw, 6rem);
+    border-right: 1px solid var(--ink);
+  }
+
+  .career-content {
+    padding: 4rem clamp(1.5rem, 4vw, 4rem);
+  }
+
+  .career-content h2 { margin-bottom: 3rem; }
+
+  .role {
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(26,24,20,0.1);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+  }
+
+  .role:last-child { border-bottom: none; }
+
+  .role-co {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+
+  .role-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .role-desc {
+    font-size: 14px;
+    color: var(--ink-mid);
+    max-width: 60ch;
+    line-height: 1.65;
+  }
+
+  .role-dates {
+    font-size: 13px;
+    color: var(--ink-light);
+    white-space: nowrap;
+    padding-top: 0.25rem;
+  }
+
+  /* CONTACT */
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0;
+  }
+
+  .contact-label {
+    padding: 4rem clamp(1.5rem, 6vw, 6rem);
+    border-right: 1px solid var(--ink);
+  }
+
+  .contact-content {
+    padding: 4rem clamp(1.5rem, 4vw, 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  .contact-content h2 { max-width: 16ch; }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1rem;
+    font-size: 15px;
+  }
+
+  .contact-item-label {
+    color: var(--ink-light);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    min-width: 4rem;
+    padding-top: 0.15rem;
+  }
+
+  .contact-item a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(26,24,20,0.2);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .contact-item a:hover { color: var(--accent); border-color: var(--accent); }
+
+  footer {
+    padding: 1.5rem clamp(1.5rem, 6vw, 6rem);
+    border-top: 1px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--ink-light);
+    letter-spacing: 0.05em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-label { animation: fadeUp 0.6s ease both; }
+  h1 { animation: fadeUp 0.6s ease 0.1s both; }
+  .hero-sub { animation: fadeUp 0.6s ease 0.2s both; }
+  .hero-footer { animation: fadeUp 0.6s ease 0.3s both; }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    .numbers { grid-template-columns: 1fr; }
+    .number-item { border-right: none; border-bottom: 1px solid var(--ink); }
+    .number-item:last-child { border-bottom: none; }
+    .what, .results, .career, .contact { grid-template-columns: 1fr; }
+    .what-label, .results-label, .career-label, .contact-label {
+      border-right: none;
+      border-bottom: 1px solid var(--ink);
+      padding: 2rem clamp(1.5rem, 6vw, 6rem);
+      display: flex;
+      align-items: center;
+    }
+    .results-label { border-bottom-color: rgba(245,242,237,0.15); }
+    .section-tag { writing-mode: horizontal-tb; transform: none; }
+    .nav-links { display: none; }
+    .role { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <span>Rob Dobson</span>
+    <ul class="nav-links">
+      <li><a href="#what">What I do</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#career">Career</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <p class="hero-label">Senior Digital Leader · Manchester</p>
+    <h1>27 years of <em>digital</em> that actually works.</h1>
+    <p class="hero-sub">I help organisations diagnose digital problems quickly, improve conversion, and build strategies that get real buy-in — not just presentations that gather dust. From the world's first internet bank to award-winning agency work, the common thread is results you can measure.</p>
+  </div>
+
+  <div class="hero-footer">
+    <span class="since">Working in digital since 1999</span>
+    <div class="cta-group">
+      <a href="Rob_Dobson_CV.pdf" class="btn" download>Download CV</a>
+      <a href="#contact" class="btn btn-primary">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<section class="numbers">
+  <div class="number-item">
+    <div class="number-big">225<span>%</span></div>
+    <div class="number-label">Conversion increase for Uncle.co.uk</div>
+  </div>
+  <div class="number-item">
+    <div class="number-big">30<span>%+</span></div>
+    <div class="number-label">CRO improvement — consistently, across clients</div>
+  </div>
+  <div class="number-item">
+    <div class="number-big">27<span>yrs</span></div>
+    <div class="number-label">In digital, from internet banking to applied AI</div>
+  </div>
+</section>
+
+<section class="what" id="what">
+  <div class="what-label">
+    <span class="section-tag">What I do</span>
+  </div>
+  <div class="what-content">
+    <h2>Strategy. CRO. AI. All joined up.</h2>
+    <p style="color: var(--ink-mid); max-width: 58ch; font-size: 15px;">I work across the full digital mix — from C-suite strategy to writing production code — which means I can see problems others miss and fix them faster. I don't produce recommendations that need another agency to implement. I do the work.</p>
+
+    <div class="competencies">
+      <div class="comp">
+        <div class="comp-title">Strategic Digital Leadership</div>
+        <div class="comp-desc">Diagnosing digital challenges and turning them into clear, actionable strategies that get genuine buy-in at board level.</div>
+      </div>
+      <div class="comp">
+        <div class="comp-title">Conversion Rate Optimisation</div>
+        <div class="comp-desc">Measurable, high-impact CRO — with a published book and speaking engagements at D2C industry events to back it up.</div>
+      </div>
+      <div class="comp">
+        <div class="comp-title">Applied AI</div>
+        <div class="comp-desc">Using LLMs, generative platforms, and automation across strategy, content, and development — practically, not theoretically.</div>
+      </div>
+      <div class="comp">
+        <div class="comp-title">UX & Digital Product</div>
+        <div class="comp-desc">From information architecture to production code. Comfortable at every level of the stack.</div>
+      </div>
+      <div class="comp">
+        <div class="comp-title">Stakeholder Management</div>
+        <div class="comp-desc">Translating the technical into the commercial — no jargon, no slide decks nobody reads.</div>
+      </div>
+      <div class="comp">
+        <div class="comp-title">Agency & Vendor Management</div>
+        <div class="comp-desc">Evaluating, briefing, and managing external partners to keep things aligned, on budget, and performing.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="results" id="results">
+  <div class="results-label">
+    <span class="section-tag">Results</span>
+  </div>
+  <div class="results-content">
+    <h2>The work speaks for itself.</h2>
+    <ul class="result-list">
+      <li>
+        <span class="result-marker">01</span>
+        <span>Delivered a <strong style="color:#fff">225% conversion rate increase</strong> for Uncle.co.uk across a five-year engagement — redesigning, rebuilding, and optimising until every building in their portfolio sold out.</span>
+      </li>
+      <li>
+        <span class="result-marker">02</span>
+        <span>Led design and development of <strong style="color:#fff">smile.co.uk — the world's first fully functional internet bank</strong> — whose UX structure was subsequently adopted as the blueprint for the Co-op Bank site.</span>
+      </li>
+      <li>
+        <span class="result-marker">03</span>
+        <span><strong style="color:#fff">Consistently achieved 30%+ CRO improvements</strong> across multiple clients, using a combination of quantitative and qualitative research and a wide range of optimisation tools.</span>
+      </li>
+      <li>
+        <span class="result-marker">04</span>
+        <span>Won <strong style="color:#fff">The Heist Gold Award 2024</strong> for digital work with Morley College.</span>
+      </li>
+      <li>
+        <span class="result-marker">05</span>
+        <span>Wrote a <strong style="color:#fff">sell-out book on Conversion Rate Optimisation</strong> and became an invited speaker at D2C industry events including Bread &amp; Jam.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="career" id="career">
+  <div class="career-label">
+    <span class="section-tag">Career</span>
+  </div>
+  <div class="career-content">
+    <h2>Where I've been.</h2>
+
+    <div class="role">
+      <div>
+        <div class="role-co">Northern Comfort</div>
+        <div class="role-title">Founder</div>
+        <div class="role-desc">Founded and grew a digital agency to a team of eight, working with multinational clients including Uncle.co.uk, De Gruyter, Birkhäuser, CEU, Morley College, and L&Q, as well as agencies DigitasLBi and The Chase. Clients across the UK, US, Germany, and Europe.</div>
+      </div>
+      <div class="role-dates">2011 – Present</div>
+    </div>
+
+    <div class="role">
+      <div>
+        <div class="role-co">Manchester Airport Group</div>
+        <div class="role-title">Head of Intranet</div>
+        <div class="role-desc">Redeveloped and relaunched the MAG intranet from the ground up, securing buy-in up to C-Suite level and driving significant increases in usage and time-on-site.</div>
+      </div>
+      <div class="role-dates">2009 – 2011</div>
+    </div>
+
+    <div class="role">
+      <div>
+        <div class="role-co">Co-operative Group / smile.co.uk</div>
+        <div class="role-title">Head of Design & Development</div>
+        <div class="role-desc">Led design and development of the world's first fully functional internet bank. Designed the complete UX across all banking screens and devices. Worked directly with the CEO and Directors throughout.</div>
+      </div>
+      <div class="role-dates">1999 – 2009</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-label">
+    <span class="section-tag">Contact</span>
+  </div>
+  <div class="contact-content">
+    <h2>Let's talk about what you need.</h2>
+    <div class="contact-details">
+      <div class="contact-item">
+        <span class="contact-item-label">Email</span>
+        <a href="mailto:RobinDobson@proton.me">RobinDobson@proton.me</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-label">Phone</span>
+        <a href="tel:07948479847">07948 479 847</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-label">Based</span>
+        <span>Manchester, UK — available remotely or on-site</span>
+      </div>
+    </div>
+    <a href="Rob_Dobson_CV.pdf" class="btn" download style="align-self: flex-start;">Download CV (PDF)</a>
+  </div>
+</section>
+
+<footer>
+  <span>Rob Dobson · robindobson.me</span>
+  <span>Senior Digital Leader · Manchester</span>
+</footer>
+
+</body>
+</html>
