@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "Deliberate",
+    "slug": "deliberate",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#0f0f13"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.robindobson.deliberate"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0f0f13",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.robindobson.deliberate"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "color": "#6c63ff"
+        }
+      ]
+    ]
+  }
+}
