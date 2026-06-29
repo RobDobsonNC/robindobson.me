@@ -40,8 +40,8 @@ export async function scheduleNotificationsForIdea(idea: Idea): Promise<string[]
 
       const id = await Notifications.scheduleNotificationAsync({
         content: {
-          title: 'Check in',
-          body: 'A moment to reflect — how important is this right now?',
+          title: idea.title,
+          body: 'How important is this right now?',
           data: { ideaId: idea.id },
         },
         trigger: {
