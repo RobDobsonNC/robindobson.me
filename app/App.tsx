@@ -28,11 +28,11 @@ export default function App() {
     <NavigationContainer ref={navRef}>
       <Stack.Navigator
         screenOptions={{
-          headerStyle: { backgroundColor: '#0f0f13' },
-          headerTintColor: '#fff',
+          headerStyle: { backgroundColor: '#f2f2f7' },
+          headerTintColor: '#6c63ff',
           headerShadowVisible: false,
           headerBackTitle: 'Back',
-          contentStyle: { backgroundColor: '#0f0f13' },
+          contentStyle: { backgroundColor: '#f2f2f7' },
         }}
       >
         <Stack.Screen

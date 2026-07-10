@@ -42,7 +42,6 @@ export default function CheckInScreen() {
       score,
     })
 
-    // Fade out, then navigate
     Animated.timing(fadeAnim, {
       toValue: 0,
       duration: 600,
@@ -105,10 +104,10 @@ export default function CheckInScreen() {
 }
 
 const s = StyleSheet.create({
-  root: { flex: 1, backgroundColor: '#0f0f13', justifyContent: 'center' },
+  root: { flex: 1, backgroundColor: '#f2f2f7', justifyContent: 'center' },
   inner: { alignItems: 'center', paddingHorizontal: 32 },
   question: {
-    color: '#fff',
+    color: '#1c1c1e',
     fontSize: 28,
     fontWeight: '600',
     textAlign: 'center',
@@ -116,7 +115,7 @@ const s = StyleSheet.create({
     marginBottom: 12,
   },
   subtext: {
-    color: '#383848',
+    color: '#8e8e93',
     fontSize: 14,
     textAlign: 'center',
     lineHeight: 20,
@@ -127,15 +126,18 @@ const s = StyleSheet.create({
     width: 54,
     height: 54,
     borderRadius: 27,
-    backgroundColor: '#17171f',
+    backgroundColor: '#ffffff',
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#252535',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 6,
+    elevation: 3,
   },
-  scoreNum: { color: '#fff', fontSize: 19, fontWeight: '500' },
+  scoreNum: { color: '#1c1c1e', fontSize: 19, fontWeight: '500' },
   labelRow: { flexDirection: 'row', justifyContent: 'space-between', width: '100%' },
-  scaleLabel: { color: '#333', fontSize: 12 },
+  scaleLabel: { color: '#c7c7cc', fontSize: 12 },
   doneWrap: { alignItems: 'center' },
   doneScore: {
     fontSize: 84,
@@ -144,7 +146,7 @@ const s = StyleSheet.create({
     lineHeight: 90,
     marginBottom: 4,
   },
-  doneText: { color: '#555', fontSize: 22, fontWeight: '500' },
+  doneText: { color: '#8e8e93', fontSize: 22, fontWeight: '500' },
   skip: { position: 'absolute', bottom: 52, alignSelf: 'center' },
-  skipText: { color: '#2c2c3c', fontSize: 15 },
+  skipText: { color: '#c7c7cc', fontSize: 15 },
 })
