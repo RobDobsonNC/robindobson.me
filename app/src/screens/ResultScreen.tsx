@@ -12,9 +12,9 @@ type Nav = NativeStackNavigationProp<RootStackParamList>
 type Route = { params: { ideaId: string } }
 
 function ScoreDisplay({ avg }: { avg: number }) {
-  let color = '#e05555'
+  let color = '#ff3b30'
   if (avg >= 4) color = '#6c63ff'
-  else if (avg >= 3) color = '#f0a500'
+  else if (avg >= 3) color = '#ff9500'
 
   const fillPct = ((avg - 1) / 4) * 100
 
@@ -35,8 +35,8 @@ const gauge = StyleSheet.create({
   wrap: { alignItems: 'center', marginVertical: 36, width: '100%' },
   numberRow: { flexDirection: 'row', alignItems: 'flex-end', marginBottom: 20 },
   number: { fontSize: 80, fontWeight: '200', lineHeight: 84 },
-  denom: { color: '#333', fontSize: 22, marginBottom: 10 },
-  track: { width: 220, height: 3, backgroundColor: '#1e1e2a', borderRadius: 2 },
+  denom: { color: '#8e8e93', fontSize: 22, marginBottom: 10 },
+  track: { width: 220, height: 3, backgroundColor: '#e5e5ea', borderRadius: 2 },
   fill: { height: 3, borderRadius: 2 },
 })
 
@@ -111,10 +111,10 @@ export default function ResultScreen() {
 }
 
 const s = StyleSheet.create({
-  root: { flex: 1, backgroundColor: '#0f0f13' },
+  root: { flex: 1, backgroundColor: '#f2f2f7' },
   scroll: { padding: 28, paddingTop: 40, alignItems: 'center' },
   eyebrow: {
-    color: '#333',
+    color: '#8e8e93',
     fontSize: 11,
     fontWeight: '700',
     letterSpacing: 1.5,
@@ -122,25 +122,25 @@ const s = StyleSheet.create({
     marginBottom: 12,
   },
   title: {
-    color: '#fff',
+    color: '#1c1c1e',
     fontSize: 26,
     fontWeight: '600',
     textAlign: 'center',
     lineHeight: 32,
   },
-  checkInCount: { color: '#3a3a4a', fontSize: 13, marginTop: 4 },
+  checkInCount: { color: '#8e8e93', fontSize: 13, marginTop: 4 },
   trendText: {
-    color: '#444',
+    color: '#6e6e73',
     fontSize: 14,
     marginTop: 14,
     textAlign: 'center',
     paddingHorizontal: 20,
     lineHeight: 20,
   },
-  noVotes: { color: '#333', fontSize: 15, marginVertical: 40, textAlign: 'center' },
-  divider: { width: '100%', height: 1, backgroundColor: '#17171f', marginVertical: 36 },
+  noVotes: { color: '#8e8e93', fontSize: 15, marginVertical: 40, textAlign: 'center' },
+  divider: { width: '100%', height: 1, backgroundColor: '#e5e5ea', marginVertical: 36 },
   decideLabel: {
-    color: '#444',
+    color: '#8e8e93',
     fontSize: 11,
     fontWeight: '700',
     letterSpacing: 1.2,
@@ -158,10 +158,15 @@ const s = StyleSheet.create({
   btnActText: { color: '#fff', fontSize: 16, fontWeight: '600' },
   btnDismiss: {
     width: '100%',
-    backgroundColor: '#17171f',
+    backgroundColor: '#ffffff',
     borderRadius: 16,
     padding: 18,
     alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.06,
+    shadowRadius: 4,
+    elevation: 2,
   },
-  btnDismissText: { color: '#555', fontSize: 16, fontWeight: '500' },
+  btnDismissText: { color: '#8e8e93', fontSize: 16, fontWeight: '500' },
 })

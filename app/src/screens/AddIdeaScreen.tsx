@@ -65,7 +65,7 @@ export default function AddIdeaScreen() {
         value={title}
         onChangeText={setTitle}
         placeholder="e.g. New iPhone, change career, buy a sofa…"
-        placeholderTextColor="#333"
+        placeholderTextColor="#c7c7cc"
         multiline
         autoFocus
       />
@@ -84,8 +84,8 @@ export default function AddIdeaScreen() {
       </View>
 
       <Text style={s.hint}>
-        You'll get {days * 3} blind check-ins over {days} days.{'\n'}
-        No title, no history — just: <Text style={s.hintItalic}>how important is this right now?</Text>
+        You'll get {days * 3} check-ins over {days} days.{'\n'}
+        Each one simply asks: <Text style={s.hintItalic}>how important is this right now?</Text>
       </Text>
 
       <TouchableOpacity style={[s.btn, saving && s.btnDisabled]} onPress={handleSave} disabled={saving}>
@@ -96,10 +96,10 @@ export default function AddIdeaScreen() {
 }
 
 const s = StyleSheet.create({
-  root: { flex: 1, backgroundColor: '#0f0f13' },
+  root: { flex: 1, backgroundColor: '#f2f2f7' },
   scroll: { padding: 24, paddingTop: 32 },
   label: {
-    color: '#555',
+    color: '#6e6e73',
     fontSize: 11,
     fontWeight: '700',
     letterSpacing: 1.2,
@@ -107,36 +107,46 @@ const s = StyleSheet.create({
     marginBottom: 10,
   },
   input: {
-    backgroundColor: '#17171f',
-    color: '#fff',
+    backgroundColor: '#ffffff',
+    color: '#1c1c1e',
     fontSize: 17,
     borderRadius: 16,
     padding: 16,
     marginBottom: 36,
     minHeight: 88,
     textAlignVertical: 'top',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.06,
+    shadowRadius: 4,
+    elevation: 2,
   },
   dayRow: { flexDirection: 'row', gap: 10, marginBottom: 20 },
   dayBtn: {
     flex: 1,
-    backgroundColor: '#17171f',
+    backgroundColor: '#ffffff',
     borderRadius: 14,
     paddingVertical: 16,
     alignItems: 'center',
-    borderWidth: 1,
+    borderWidth: 1.5,
     borderColor: 'transparent',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.06,
+    shadowRadius: 4,
+    elevation: 2,
   },
-  dayBtnOn: { borderColor: '#6c63ff', backgroundColor: '#6c63ff18' },
-  dayText: { color: '#444', fontSize: 15, fontWeight: '600' },
+  dayBtnOn: { borderColor: '#6c63ff', backgroundColor: '#f0efff' },
+  dayText: { color: '#8e8e93', fontSize: 15, fontWeight: '600' },
   dayTextOn: { color: '#6c63ff' },
   hint: {
-    color: '#3a3a4a',
+    color: '#8e8e93',
     fontSize: 14,
     lineHeight: 21,
     textAlign: 'center',
     marginBottom: 44,
   },
-  hintItalic: { fontStyle: 'italic', color: '#555' },
+  hintItalic: { fontStyle: 'italic', color: '#6e6e73' },
   btn: {
     backgroundColor: '#6c63ff',
     borderRadius: 16,
