@@ -38,7 +38,7 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: 'Deliberate' }}
+          options={{ title: 'Sleep On It' }}
         />
         <Stack.Screen
           name="AddIdea"
