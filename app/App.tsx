@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { TouchableOpacity, Text } from 'react-native'
 import { NavigationContainer, useNavigationContainerRef } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import * as Notifications from 'expo-notifications'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { RootStackParamList } from './src/types'
+import OnboardingScreen from './src/screens/OnboardingScreen'
 import HomeScreen from './src/screens/HomeScreen'
 import AddIdeaScreen from './src/screens/AddIdeaScreen'
 import CheckInScreen from './src/screens/CheckInScreen'
@@ -12,9 +15,15 @@ const Stack = createNativeStackNavigator<RootStackParamList>()
 
 export default function App() {
   const navRef = useNavigationContainerRef<RootStackParamList>()
+  const [initialRoute, setInitialRoute] = useState<'Onboarding' | 'Home' | null>(null)
 
   useEffect(() => {
-    // Handle tapping a notification when the app is open or backgrounded
+    AsyncStorage.getItem('onboarding:seen').then(seen => {
+      setInitialRoute(seen ? 'Home' : 'Onboarding')
+    })
+  }, [])
+
+  useEffect(() => {
     const sub = Notifications.addNotificationResponseReceivedListener(response => {
       const ideaId = response.notification.request.content.data?.ideaId as string | undefined
       if (ideaId && navRef.isReady()) {
@@ -24,9 +33,12 @@ export default function App() {
     return () => sub.remove()
   }, [])
 
+  if (!initialRoute) return null
+
   return (
     <NavigationContainer ref={navRef}>
       <Stack.Navigator
+        initialRouteName={initialRoute}
         screenOptions={{
           headerStyle: { backgroundColor: '#f2f2f7' },
           headerTintColor: '#6c63ff',
@@ -36,14 +48,26 @@ export default function App() {
         }}
       >
         <Stack.Screen
+          name="Onboarding"
+          component={OnboardingScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: 'Sleep On It' }}
+          options={({ navigation }) => ({
+            title: 'Sleep On It',
+            headerRight: () => (
+              <TouchableOpacity onPress={() => navigation.navigate('Onboarding')} hitSlop={12}>
+                <Text style={{ color: '#6c63ff', fontSize: 20 }}>?</Text>
+              </TouchableOpacity>
+            ),
+          })}
         />
         <Stack.Screen
           name="AddIdea"
           component={AddIdeaScreen}
-          options={{ title: 'New idea' }}
+          options={{ title: 'New' }}
         />
         <Stack.Screen
           name="CheckIn"

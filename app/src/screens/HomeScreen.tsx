@@ -10,6 +10,7 @@ import { getIdeas } from '../storage'
 
 type Nav = NativeStackNavigationProp<RootStackParamList>
 
+
 function avgScore(idea: Idea): number | null {
   if (idea.votes.length === 0) return null
   return idea.votes.reduce((s, v) => s + v.score, 0) / idea.votes.length

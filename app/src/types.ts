@@ -15,6 +15,7 @@ export type Idea = {
 }
 
 export type RootStackParamList = {
+  Onboarding: undefined
   Home: undefined
   AddIdea: undefined
   CheckIn: { ideaId: string }
