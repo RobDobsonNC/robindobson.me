@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Deliberate",
-    "slug": "deliberate",
+    "name": "Sleep On It",
+    "slug": "sleep-on-it",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,7 +11,7 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.robindobson.deliberate"
+      "bundleIdentifier": "com.robindobson.sleeponit"
     },
     "android": {
       "adaptiveIcon": {
@@ -21,7 +21,7 @@
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.robindobson.deliberate"
+      "package": "com.robindobson.sleeponit"
     },
     "web": {
       "favicon": "./assets/favicon.png"
