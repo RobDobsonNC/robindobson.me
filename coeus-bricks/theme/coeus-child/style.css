@@ -1,0 +1,20 @@
+/*
+Theme Name:   Coeus Technical
+Theme URI:    https://coeus-technical.co.uk
+Description:  Bricks child theme for Coeus Technical. Registers the content
+              model (case studies, insights, people) and ships the importer
+              for the Bricks global variables, BEM global classes, theme styles
+              and page templates. Presentation lives in Bricks, not here.
+Author:       Coeus Technical
+Template:     bricks
+Version:      1.0.0
+Text Domain:  coeus
+*/
+
+/*
+ * Deliberately near-empty.
+ *
+ * All styling is authored as Bricks global variables + global classes so the
+ * client can edit it from the Bricks UI. Only rules Bricks genuinely cannot
+ * express belong here — see assets/css/coeus.css.
+ */
