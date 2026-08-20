@@ -1,0 +1,13 @@
+{
+  "name": "coeus-bricks",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generates the Bricks global variables, BEM global classes, theme styles and page templates for the Coeus Technical website.",
+  "scripts": {
+    "build": "node src/build.js",
+    "validate": "node src/validate.js",
+    "check": "npm run build && npm run validate",
+    "install-theme": "npm run check && mkdir -p theme/coeus-child/dist && cp dist/coeus-bundle.json theme/coeus-child/dist/"
+  },
+  "engines": { "node": ">=18" }
+}

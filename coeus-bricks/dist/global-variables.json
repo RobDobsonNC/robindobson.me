@@ -1,0 +1,530 @@
+{
+  "categories": [
+    {
+      "id": "cat-colour",
+      "name": "Brand colours"
+    },
+    {
+      "id": "cat-phase",
+      "name": "Phase colours"
+    },
+    {
+      "id": "cat-typography",
+      "name": "Typography"
+    },
+    {
+      "id": "cat-spacing",
+      "name": "Spacing"
+    },
+    {
+      "id": "cat-layout",
+      "name": "Layout"
+    }
+  ],
+  "variables": [
+    {
+      "id": "var-clr-petrol",
+      "name": "clr-petrol",
+      "value": "#084058",
+      "category": "cat-colour",
+      "label": "Petrol (primary)"
+    },
+    {
+      "id": "var-clr-abyss",
+      "name": "clr-abyss",
+      "value": "#052B3B",
+      "category": "cat-colour",
+      "label": "Abyss (deep background)"
+    },
+    {
+      "id": "var-clr-ember",
+      "name": "clr-ember",
+      "value": "#C45A2B",
+      "category": "cat-colour",
+      "label": "Ember (accent)"
+    },
+    {
+      "id": "var-clr-teal-coastal",
+      "name": "clr-teal-coastal",
+      "value": "#2C6E83",
+      "category": "cat-colour",
+      "label": "Coastal Teal"
+    },
+    {
+      "id": "var-clr-teal-mid",
+      "name": "clr-teal-mid",
+      "value": "#1A5C73",
+      "category": "cat-colour",
+      "label": "Mid Teal"
+    },
+    {
+      "id": "var-clr-white",
+      "name": "clr-white",
+      "value": "#ffffff",
+      "category": "cat-colour",
+      "label": "White"
+    },
+    {
+      "id": "var-clr-ink",
+      "name": "clr-ink",
+      "value": "#14201F",
+      "category": "cat-colour",
+      "label": "Ink (body text)"
+    },
+    {
+      "id": "var-clr-muted",
+      "name": "clr-muted",
+      "value": "#F4F7F8",
+      "category": "cat-colour",
+      "label": "Muted surface"
+    },
+    {
+      "id": "var-clr-muted-ink",
+      "name": "clr-muted-ink",
+      "value": "#5C686D",
+      "category": "cat-colour",
+      "label": "Muted text"
+    },
+    {
+      "id": "var-clr-border",
+      "name": "clr-border",
+      "value": "#D6DDDF",
+      "category": "cat-colour",
+      "label": "Border"
+    },
+    {
+      "id": "var-clr-secondary",
+      "name": "clr-secondary",
+      "value": "#DCE6E9",
+      "category": "cat-colour",
+      "label": "Secondary surface"
+    },
+    {
+      "id": "var-clr-on-dark-90",
+      "name": "clr-on-dark-90",
+      "value": "rgba(255,255,255,0.90)",
+      "category": "cat-colour",
+      "label": "On dark 90%"
+    },
+    {
+      "id": "var-clr-on-dark-70",
+      "name": "clr-on-dark-70",
+      "value": "rgba(255,255,255,0.70)",
+      "category": "cat-colour",
+      "label": "On dark 70%"
+    },
+    {
+      "id": "var-clr-on-dark-55",
+      "name": "clr-on-dark-55",
+      "value": "rgba(255,255,255,0.55)",
+      "category": "cat-colour",
+      "label": "On dark 55%"
+    },
+    {
+      "id": "var-clr-on-dark-40",
+      "name": "clr-on-dark-40",
+      "value": "rgba(255,255,255,0.40)",
+      "category": "cat-colour",
+      "label": "On dark 40%"
+    },
+    {
+      "id": "var-clr-on-dark-25",
+      "name": "clr-on-dark-25",
+      "value": "rgba(255,255,255,0.25)",
+      "category": "cat-colour",
+      "label": "On dark 25%"
+    },
+    {
+      "id": "var-clr-on-dark-10",
+      "name": "clr-on-dark-10",
+      "value": "rgba(255,255,255,0.10)",
+      "category": "cat-colour",
+      "label": "On dark 10%"
+    },
+    {
+      "id": "var-clr-hero-scrim",
+      "name": "clr-hero-scrim",
+      "value": "linear-gradient(to right, rgba(5,43,59,0.97) 0%, rgba(5,43,59,0.88) 55%, rgba(5,43,59,0.40) 100%)",
+      "category": "cat-colour",
+      "label": "Hero gradient scrim"
+    },
+    {
+      "id": "var-clr-page-hero-scrim",
+      "name": "clr-page-hero-scrim",
+      "value": "linear-gradient(to right, rgba(5,43,59,0.97), rgba(5,43,59,0.70))",
+      "category": "cat-colour",
+      "label": "Page hero gradient scrim"
+    },
+    {
+      "id": "var-clr-phase-01",
+      "name": "clr-phase-01",
+      "value": "#052B3B",
+      "category": "cat-phase",
+      "label": "Phase 01 — Innovate"
+    },
+    {
+      "id": "var-clr-phase-02",
+      "name": "clr-phase-02",
+      "value": "#084058",
+      "category": "cat-phase",
+      "label": "Phase 02 — Design"
+    },
+    {
+      "id": "var-clr-phase-03",
+      "name": "clr-phase-03",
+      "value": "#1A5C73",
+      "category": "cat-phase",
+      "label": "Phase 03 — Build"
+    },
+    {
+      "id": "var-clr-phase-04",
+      "name": "clr-phase-04",
+      "value": "#2C6E83",
+      "category": "cat-phase",
+      "label": "Phase 04 — Protect"
+    },
+    {
+      "id": "var-fs-hero",
+      "name": "fs-hero",
+      "value": "clamp(2.4rem, 5.5vw, 4rem)",
+      "category": "cat-typography",
+      "label": "Hero title"
+    },
+    {
+      "id": "var-fs-page-hero",
+      "name": "fs-page-hero",
+      "value": "clamp(2rem, 5vw, 3.2rem)",
+      "category": "cat-typography",
+      "label": "Page hero title"
+    },
+    {
+      "id": "var-fs-h2",
+      "name": "fs-h2",
+      "value": "clamp(1.8rem, 3.5vw, 2.6rem)",
+      "category": "cat-typography",
+      "label": "Section title"
+    },
+    {
+      "id": "var-fs-h2-sm",
+      "name": "fs-h2-sm",
+      "value": "clamp(1.6rem, 3vw, 2.2rem)",
+      "category": "cat-typography",
+      "label": "Section title (small)"
+    },
+    {
+      "id": "var-fs-h2-cta",
+      "name": "fs-h2-cta",
+      "value": "clamp(1.8rem, 4vw, 3rem)",
+      "category": "cat-typography",
+      "label": "CTA title"
+    },
+    {
+      "id": "var-fs-h3",
+      "name": "fs-h3",
+      "value": "1.5rem",
+      "category": "cat-typography",
+      "label": "Card title"
+    },
+    {
+      "id": "var-fs-h4",
+      "name": "fs-h4",
+      "value": "1.05rem",
+      "category": "cat-typography",
+      "label": "Sub-heading"
+    },
+    {
+      "id": "var-fs-lead",
+      "name": "fs-lead",
+      "value": "clamp(1rem, 1.4vw, 1.15rem)",
+      "category": "cat-typography",
+      "label": "Lead paragraph"
+    },
+    {
+      "id": "var-fs-intro",
+      "name": "fs-intro",
+      "value": "clamp(1.05rem, 1.6vw, 1.2rem)",
+      "category": "cat-typography",
+      "label": "Intro paragraph"
+    },
+    {
+      "id": "var-fs-base",
+      "name": "fs-base",
+      "value": "1rem",
+      "category": "cat-typography",
+      "label": "Body"
+    },
+    {
+      "id": "var-fs-sm",
+      "name": "fs-sm",
+      "value": "0.875rem",
+      "category": "cat-typography",
+      "label": "Small"
+    },
+    {
+      "id": "var-fs-xs",
+      "name": "fs-xs",
+      "value": "0.75rem",
+      "category": "cat-typography",
+      "label": "Extra small"
+    },
+    {
+      "id": "var-fs-eyebrow",
+      "name": "fs-eyebrow",
+      "value": "0.625rem",
+      "category": "cat-typography",
+      "label": "Eyebrow / label"
+    },
+    {
+      "id": "var-fs-micro",
+      "name": "fs-micro",
+      "value": "0.5625rem",
+      "category": "cat-typography",
+      "label": "Micro label"
+    },
+    {
+      "id": "var-fw-normal",
+      "name": "fw-normal",
+      "value": "400",
+      "category": "cat-typography",
+      "label": "Weight normal"
+    },
+    {
+      "id": "var-fw-medium",
+      "name": "fw-medium",
+      "value": "500",
+      "category": "cat-typography",
+      "label": "Weight medium"
+    },
+    {
+      "id": "var-fw-semibold",
+      "name": "fw-semibold",
+      "value": "600",
+      "category": "cat-typography",
+      "label": "Weight semibold"
+    },
+    {
+      "id": "var-fw-bold",
+      "name": "fw-bold",
+      "value": "700",
+      "category": "cat-typography",
+      "label": "Weight bold"
+    },
+    {
+      "id": "var-fw-black",
+      "name": "fw-black",
+      "value": "800",
+      "category": "cat-typography",
+      "label": "Weight black"
+    },
+    {
+      "id": "var-ls-eyebrow",
+      "name": "ls-eyebrow",
+      "value": "0.3em",
+      "category": "cat-typography",
+      "label": "Eyebrow tracking"
+    },
+    {
+      "id": "var-ls-wide",
+      "name": "ls-wide",
+      "value": "0.15em",
+      "category": "cat-typography",
+      "label": "Wide tracking"
+    },
+    {
+      "id": "var-ls-tight",
+      "name": "ls-tight",
+      "value": "-0.02em",
+      "category": "cat-typography",
+      "label": "Tight tracking"
+    },
+    {
+      "id": "var-lh-tight",
+      "name": "lh-tight",
+      "value": "1.1",
+      "category": "cat-typography",
+      "label": "Line height tight"
+    },
+    {
+      "id": "var-lh-snug",
+      "name": "lh-snug",
+      "value": "1.3",
+      "category": "cat-typography",
+      "label": "Line height snug"
+    },
+    {
+      "id": "var-lh-body",
+      "name": "lh-body",
+      "value": "1.65",
+      "category": "cat-typography",
+      "label": "Line height body"
+    },
+    {
+      "id": "var-font-sans",
+      "name": "font-sans",
+      "value": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif",
+      "category": "cat-typography",
+      "label": "Body font stack"
+    },
+    {
+      "id": "var-sp-3xs",
+      "name": "sp-3xs",
+      "value": "0.25rem",
+      "category": "cat-spacing",
+      "label": "4px"
+    },
+    {
+      "id": "var-sp-2xs",
+      "name": "sp-2xs",
+      "value": "0.5rem",
+      "category": "cat-spacing",
+      "label": "8px"
+    },
+    {
+      "id": "var-sp-xs",
+      "name": "sp-xs",
+      "value": "0.75rem",
+      "category": "cat-spacing",
+      "label": "12px"
+    },
+    {
+      "id": "var-sp-sm",
+      "name": "sp-sm",
+      "value": "1rem",
+      "category": "cat-spacing",
+      "label": "16px"
+    },
+    {
+      "id": "var-sp-md",
+      "name": "sp-md",
+      "value": "1.5rem",
+      "category": "cat-spacing",
+      "label": "24px"
+    },
+    {
+      "id": "var-sp-lg",
+      "name": "sp-lg",
+      "value": "2rem",
+      "category": "cat-spacing",
+      "label": "32px"
+    },
+    {
+      "id": "var-sp-xl",
+      "name": "sp-xl",
+      "value": "2.75rem",
+      "category": "cat-spacing",
+      "label": "44px"
+    },
+    {
+      "id": "var-sp-2xl",
+      "name": "sp-2xl",
+      "value": "4rem",
+      "category": "cat-spacing",
+      "label": "64px"
+    },
+    {
+      "id": "var-sp-3xl",
+      "name": "sp-3xl",
+      "value": "5rem",
+      "category": "cat-spacing",
+      "label": "80px"
+    },
+    {
+      "id": "var-sp-4xl",
+      "name": "sp-4xl",
+      "value": "6rem",
+      "category": "cat-spacing",
+      "label": "96px"
+    },
+    {
+      "id": "var-sp-section",
+      "name": "sp-section",
+      "value": "clamp(3.5rem, 6vw, 5rem)",
+      "category": "cat-spacing",
+      "label": "Section padding (default)"
+    },
+    {
+      "id": "var-sp-section-lg",
+      "name": "sp-section-lg",
+      "value": "clamp(4rem, 8vw, 6rem)",
+      "category": "cat-spacing",
+      "label": "Section padding (large)"
+    },
+    {
+      "id": "var-sp-section-sm",
+      "name": "sp-section-sm",
+      "value": "clamp(2.5rem, 5vw, 4rem)",
+      "category": "cat-spacing",
+      "label": "Section padding (small)"
+    },
+    {
+      "id": "var-container-max",
+      "name": "container-max",
+      "value": "80rem",
+      "category": "cat-layout",
+      "label": "Container max width"
+    },
+    {
+      "id": "var-container-pad",
+      "name": "container-pad",
+      "value": "1.5rem",
+      "category": "cat-layout",
+      "label": "Container gutter"
+    },
+    {
+      "id": "var-container-narrow",
+      "name": "container-narrow",
+      "value": "48rem",
+      "category": "cat-layout",
+      "label": "Narrow container"
+    },
+    {
+      "id": "var-radius",
+      "name": "radius",
+      "value": "0.25rem",
+      "category": "cat-layout",
+      "label": "Corner radius"
+    },
+    {
+      "id": "var-rule-w",
+      "name": "rule-w",
+      "value": "2rem",
+      "category": "cat-layout",
+      "label": "Accent rule width"
+    },
+    {
+      "id": "var-rule-h",
+      "name": "rule-h",
+      "value": "2px",
+      "category": "cat-layout",
+      "label": "Accent rule height"
+    },
+    {
+      "id": "var-header-h",
+      "name": "header-h",
+      "value": "76px",
+      "category": "cat-layout",
+      "label": "Header height"
+    },
+    {
+      "id": "var-stripe-h",
+      "name": "stripe-h",
+      "value": "4px",
+      "category": "cat-layout",
+      "label": "Ember stripe height"
+    },
+    {
+      "id": "var-transition",
+      "name": "transition",
+      "value": "200ms",
+      "category": "cat-layout",
+      "label": "Transition duration"
+    },
+    {
+      "id": "var-transition-slow",
+      "name": "transition-slow",
+      "value": "300ms",
+      "category": "cat-layout",
+      "label": "Transition duration (slow)"
+    }
+  ]
+}

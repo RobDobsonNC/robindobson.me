@@ -1,0 +1,44 @@
+/**
+ * Coeus — the small residue of CSS that Bricks cannot express as a global
+ * class. Everything else is a Bricks global class and is editable in the UI.
+ *
+ * Keep this file small. If a rule can be a class, make it a class.
+ */
+
+/* Header: scrolled state swaps the hairline border for a shadow. */
+.c-header--scrolled {
+	border-bottom-color: transparent;
+	box-shadow: 0 2px 12px -4px rgba(5, 43, 59, 0.25);
+}
+
+/* Dropdown + mobile panel visibility. The panels' appearance is defined by
+   c-header__dropdown / c-header__mobile; this only controls open/closed. */
+.c-header__dropdown { display: none; }
+.c-header__item.is-open .c-header__dropdown { display: block; }
+
+.c-header__mobile { display: none; }
+.c-header__mobile.is-open { display: flex; }
+
+@media (min-width: 992px) {
+	.c-header__mobile,
+	.c-header__mobile.is-open { display: none; }
+}
+
+/* Screen-reader-only helper, used for the skip link and icon-only controls. */
+.u-visually-hidden {
+	position: absolute !important;
+	width: 1px; height: 1px;
+	padding: 0; margin: -1px;
+	overflow: hidden; clip: rect(0 0 0 0);
+	white-space: nowrap; border: 0;
+}
+
+/* Respect reduced-motion across every animated component. */
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
